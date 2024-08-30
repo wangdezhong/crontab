@@ -1,0 +1,41 @@
+{
+  "name": "wdz/crontab",
+  "description": "魔改mineadmin/Crontab",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "x.mo",
+      "role": "Developer"
+    },
+    {
+      "name": "zds",
+      "role": "Developer"
+    },
+    {
+      "name": "wdz",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "hyperf/crontab": "^3.0",
+    "hyperf/database": "^3.0",
+    "hyperf/db-connection": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mine\\Crontab\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mine\\Crontab\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "hyperf": {
+      "config": "Mine\\Crontab\\ConfigProvider"
+    }
+  }
+}
