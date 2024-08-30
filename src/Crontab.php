@@ -34,9 +34,10 @@ class Crontab extends Base
 
     public const NAME_COLUMN = 'name';
 
-    public const IS_ON_ONE_SERVER_COLUMN = 'is_on_one_server';
+    public const IS_ON_ONE_SERVER_COLUMN = 'onOneServer';
 
-    public const IS_SINGLETON = 'is_singleton';
+    public const IS_SINGLETON = 'singleton';
+
 
     public function __construct(
         private readonly int $cronId,
@@ -56,9 +57,16 @@ class Crontab extends Base
     {
         $type = $this->getBuilder()->value(self::TYPE_COLUMN);
         return match ($type) {
-            'url', 'class' => 'callback',
-            default => $type
+            1 => 'command',
+            3, 2 => 'callback',
+            4 => 'eval',
+            default => 'class',
         };
+//        $crontab_type = self::CRONTAB_TYPE[$type] ?? $type;
+//        return match ($crontab_type) {
+//            'url', 'class' => 'callback',
+//            default => $crontab_type
+//        };
     }
 
     public function getMemo(): ?string
@@ -108,11 +116,11 @@ class Crontab extends Base
 
     public function isOnOneServer(): bool
     {
-        return (bool) $this->getBuilder()->value(self::IS_ON_ONE_SERVER_COLUMN);
+        return $this->getBuilder()->value(self::IS_ON_ONE_SERVER_COLUMN) == 1;
     }
 
     public function isSingleton(): bool
     {
-        return (bool) $this->getBuilder()->value(self::IS_SINGLETON);
+        return $this->getBuilder()->value(self::IS_SINGLETON) == 1;
     }
 }
