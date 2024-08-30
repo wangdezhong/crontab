@@ -39,8 +39,9 @@ class Crontab extends Base
     public const IS_SINGLETON = 'singleton';
 
 
+
     public function __construct(
-        private readonly int $cronId,
+        private int $cronId,
     ) {}
 
     public function getName(): ?string
