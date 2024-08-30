@@ -18,7 +18,7 @@ use Hyperf\DbConnection\Db;
 
 class Crontab extends Base
 {
-    public const TABLE = 'crontab';
+    public const TABLE = 'setting_crontab';
 
     public const TABLE_KEY = 'id';
 

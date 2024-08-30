@@ -17,7 +17,7 @@ use Hyperf\DbConnection\Db;
 
 class Schedule
 {
-    public const CRONTAB_TABLE = 'crontab';
+    public const CRONTAB_TABLE = 'setting_crontab';
 
     /**
      * @return Crontab[]

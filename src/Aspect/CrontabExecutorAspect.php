@@ -39,7 +39,7 @@ class CrontabExecutorAspect extends AbstractAspect
                 $callback = json_encode($callback, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE);
             }
             Db::connection(CrontabContainer::$connectionName)
-                ->table('crontab_execute_log')
+                ->table('setting_crontab_log')
                 ->insert([
                     'crontab_id' => $crontab->getCronId(),
                     'name' => $crontab->getName(),
