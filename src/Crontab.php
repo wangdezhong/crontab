@@ -24,11 +24,11 @@ class Crontab extends Base
 
     public const ENABLE_COLUMN = 'status';
 
-    public const MEMO_COLUMN = 'memo';
+    public const MEMO_COLUMN = 'remark';
 
     public const TYPE_COLUMN = 'type';
 
-    public const VALUE_COLUMN = 'value';
+    public const VALUE_COLUMN = 'target';
 
     public const RULE_COLUMN = 'rule';
 
