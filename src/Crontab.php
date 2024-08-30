@@ -40,8 +40,9 @@ class Crontab extends Base
 
     public int $cronId;
 
-    public function __construct(
-    ) {}
+    public function __construct(int $cronId) {
+        $this->cronId = $cronId;
+    }
 
     public function getName(): ?string
     {
